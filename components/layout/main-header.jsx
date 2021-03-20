@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import Link from 'next/link'
 
 function MainHeader() {
 	const [mennu, setMenu] = useState()
@@ -11,13 +12,19 @@ function MainHeader() {
 					alt='logo'
 				/>
 				<ul className='ml-8 flex text-white'>
-					<li className='menu-nav'>Product</li>
-					<li className='ml-6 menu-nav'>New Arrivals</li>
-					<li className='ml-6 menu-nav'>Inspiration</li>
+					<li className='menu-nav'>
+						<Link href='/products'>Product</Link>
+					</li>
+					<li className='ml-6 menu-nav'>
+						<Link href='/new-arrivals'>New Arrivals</Link>
+					</li>
+					<li className='ml-6 menu-nav'>
+						<Link href='/inspirations'>Inspirations</Link>
+					</li>
 				</ul>
 			</div>
 			<div className='flex items-center'>
-				<input className='search' type='text' placeholder='Search here ...' />
+				<input className='search focus:shadow-md' type='text' placeholder='Search here ...' />
 				<svg
 					className='h-6 ml-5 cursor-pointer'
 					xmlns='http://www.w3.org/2000/svg'
@@ -26,9 +33,9 @@ function MainHeader() {
 					stroke='currentColor'
 				>
 					<path
-						stroke-linecap='round'
-						stroke-linejoin='round'
-						stroke-width='2'
+						strokeLinecap='round'
+						strokeLinejoin='round'
+						strokeWidth='2'
 						d='M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z'
 					/>
 				</svg>
