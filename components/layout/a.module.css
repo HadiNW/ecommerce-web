@@ -1,0 +1,22 @@
+.menu {
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	transform: translateY(100%);
+	background: rgb(142, 160, 142);
+	display: flex;
+	background-image: none;
+	height: 200px;
+	width: 100vw;
+	z-index: 10;
+	flex-direction: column;
+	flex-basis: 20%;
+	flex-wrap: wrap;
+	align-items: stretch;
+	align-content: space-around;
+}
+
+.menu li {
+	background-color: red;
+	padding: 2px;
+}

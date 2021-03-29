@@ -1,12 +1,14 @@
 import { useState } from 'react'
 
+import classes from './carousel.module.css'
+
 const images = [
 	'https://d2xjmi1k71iy2m.cloudfront.net/dairyfarm/id/pageImages/page__en_us_1614767184__1.jpeg',
 	'https://d2xjmi1k71iy2m.cloudfront.net/dairyfarm/id/pageImages/page__en_us_1615978170__1.jpeg',
 	'https://d2xjmi1k71iy2m.cloudfront.net/dairyfarm/id/pageImages/page__en_us_1613094799__1.jpeg',
 ]
 function Carousel() {
-	const [image, setImage] = useState(0)
+	const [imgs, setImage] = useState(0)
 
 	const prev = () => {
 		setImage((cur) => {
@@ -30,12 +32,14 @@ function Carousel() {
 	}
 	return (
 		<div className='relative select-none'>
-			<img
-				className=''
-				src={images[image]}
-				alt='carousel'
-			/>
-
+			{[].map((image, i) => (
+				<div  key={i} className={`slide ${imgs === i ? classes.active : classes.inactive}`}>
+					{imgs === i && (
+						<img className={``} src={image} alt='carousel' />
+					)}
+				</div>
+			))}
+			<img className={``} src={'https://d2xjmi1k71iy2m.cloudfront.net/dairyfarm/id/pageImages/page__en_us_1616557148__0.jpeg'} alt='carousel' />
 			<svg
 				onClick={prev}
 				className='w-12 absolute left-16 top-1/2 cursor-pointer bg-white p-2 rounded-full text-gray-400 transition-all ease-in duration-500 delay-500 hover:bg-red-700'
